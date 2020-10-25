@@ -3,38 +3,47 @@
 
 class Model_Data extends CI_Model {
 
+    public function getNews(){
+        $news = file_get_contents(base_url().'file/berita.json');
+        $toArray = json_decode($news, true);
+        return $toArray;
+    }
 
-    // json dummy data
-    public function getProduksi(){
-        $data =[
-            [
-                "Tanggal"   => "20-10-2020",
-                "Wilayah"   => 1,
-                "Produksi"  => "150000"
-            ],
-            [
-                "Tanggal"   => "21-10-2020",
-                "Wilayah"   => 2,
-                "Produksi"  => "150000"
-            ],
-            [
-                "Tanggal"   => "22-10-2020",
-                "Wilayah"   => 3,
-                "Produksi"  => "150000"
-            ],
-            [
-                "Tanggal"   => "3-10-2020",
-                "Wilayah"   => 4,
-                "Produksi"  => "150000"
-            ],
-            [
-                "Tanggal"   => "3-10-2020",
-                "Wilayah"   => 4,
-                "Produksi"  => "150000"
-            ]
-        ];
+    public function getProduksi($search_bulan , $type){
+        $getProduksi = file_get_contents(base_url().'file/data_barang.json');
+        $toArray = json_decode($getProduksi, true);
 
-        echo json_encode($data);
+        if ($type == 'trendSummary') {
+            foreach($toArray as $key) {
+
+                $month =  date("m",strtotime($key['Tanggal']));
+                if ($month == $search_bulan ) {
+                    $arr[] = [
+                        "name"      => "wilayah ".$key['Wilayah'],
+                        "y"         => (int)$key['Produksi'],
+                        "drilldown" => "wilayah ".$key['Wilayah'],
+                    ];
+                } 
+            }
+
+            if (!isset($arr)){
+                $arr = [
+                    "name" => 'Empty',
+                    "y" => 0,
+                    "drilldown" => 'Empty'
+                ];
+            }
+            $data = [
+                "title"  => "Trend Summary In ".date('M',strtotime($search_bulan))." 2020",
+                "result" => $arr
+
+            ];
+            echo json_encode($data);
+            exit;
+        }
+
+        return $toArray;
+       
     }
 
     

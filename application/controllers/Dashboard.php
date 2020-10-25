@@ -9,8 +9,28 @@ class Dashboard extends CI_Controller {
     }
 
     public function index() {
-        $data = $this->Model_Data->getProduksi();
-        $this->load->view('list', ["data" => $data]);
+        $news  = $this->Model_Data->getNews();
+        $nowMonth = date('m');
+        $getProduksi  = $this->Model_Data->getProduksi($nowMonth,'forTable');
+
+        $view['data'] = [
+            "title"         => "E-Dashboard Barang",
+            "last_data"     => "23-10-2020",
+            "news"          => $news,
+            "konten"        => 'konten/index',
+        ];
+
+        $this->load->view('template/layout',$view);
+    }
+
+    public function getProduksi(){
+        $bulan = ($this->input->post('bulan') == '') ? date('m') : $this->input->post('bulan');
+        $dataBarang  = $this->Model_Data->getProduksi($bulan, 'trendSummary');
+        echo $dataBarang;
+    }
+
+    public function actionAuth() {
+        redirect(base_url().'Dashboard');
     }
 }
 

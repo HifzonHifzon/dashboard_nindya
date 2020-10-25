@@ -1,0 +1,141 @@
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    background-color: e7e1f6;
+}
+
+/* body { 
+    background: url("http://localhost/dashboard_nindyakarya/asset/image/17973908.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+} */
+
+
+.header {
+    background-color: 0f5f3c;
+    width: 100%;
+    color:white;
+    padding:23px;
+    font-family : Roboto, Tahoma, sans-serif;
+}
+
+.title_total{
+    font-weight: bold;
+}
+
+.footer {
+    background-color: 0f5f3c;
+    width: 100%;
+    color:white;
+    padding:20px;
+    height: 10px;
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    padding-bottom: -30px;
+}
+
+
+.add_header {
+    background-color: e75b24;
+    width: 100%;
+    color:white;
+}
+
+
+.sidebar {
+    background-color: white;
+    height: 100%;
+    width: 105%;
+    overflow-y: hidden;
+}
+
+.img_sidebar {
+    margin-top: 13px;
+    height: 400px;
+    width:230px;
+    height:80px;
+    margin-bottom: 40px;
+}
+
+.sidebar_menu{
+    height:"30px";
+    width:"40px";
+    margin-left:30px;
+    font-weight: bold;
+}
+
+h4{
+    font-weight: bold;
+}
+
+.title_header{ 
+    font-size: 30px;
+    text-align: center;
+}
+
+.user_log{ 
+    height:"30px";
+    width:"30px";
+}
+
+.news{
+    margin-left:50px;
+}
+
+
+.grafik_summary{
+    height: 500px!important;
+    margin-bottom:-140px;
+    padding:10px;
+}
+
+.tabel_summary{
+    height: 500px!important;
+    margin-bottom:-140px;
+    padding:10px;
+}
+
+.box_total{
+    background-color: white;
+    height: 100px;
+    width: 100%;
+    border-radius:15px;
+    margin-top:10px;
+}
+
+.total_sum {
+    color:e75b24;
+    font-size: 50px;
+    text-align: center;
+    padding:20px;
+}
+
+.box_total_wrapper{
+    background-color:0f5f3c;
+    height: 140px;
+    width: 100%;
+    border-radius:15px;
+    margin-top:10px;
+    color:white;
+    font-weight: bold;
+}
+
+.box_summary{
+    background-color: white;
+    width: 100%;
+    border-radius:15px;
+    margin-top:20px;
+    padding:10px;
+}
+
+.all_box_summary{
+    background-color: white;
+    width: 100%;
+    border-radius:15px;
+    margin-top:20px;
+    padding:10px;
+}
+
