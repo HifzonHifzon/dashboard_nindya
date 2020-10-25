@@ -87,12 +87,12 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php for($x=1; $x<=20; $x++) { ?>
+                        <?php $no=1; foreach($data['produksi'] as $key) { ?>
                             <tr>
-                                <td><?php echo $x; ?></td>
-                                <td>20-10-2020</td>
-                                <td>1</td>
-                                <td>14.000</td>
+                                <td> <?php echo $no++; ?></td>
+                                <td> <?php echo $key['Tanggal'] ?></td>
+                                <td> <?php echo $key['Wilayah'] ?></td>
+                                <td> <?php echo $key['Produksi'] ?></td>
                             </tr>
                         <?php } ?>
                     </tbody>

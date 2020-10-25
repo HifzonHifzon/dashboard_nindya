@@ -17,7 +17,8 @@ class Dashboard extends CI_Controller {
             "title"         => "E-Dashboard Barang",
             "last_data"     => "23-10-2020",
             "news"          => $news,
-            "konten"        => 'konten/index',
+            "produksi"      => $getProduksi,
+            "konten"        => 'konten/summary',
         ];
 
         $this->load->view('template/layout',$view);
