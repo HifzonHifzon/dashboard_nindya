@@ -20,7 +20,7 @@ class Model_Data extends CI_Model {
                 if ($month == $search_bulan ) {
                     $arr[] = [
                         "name"      => "wilayah ".$key['Wilayah'],
-                        "y"         => (int)$key['Produksi'],
+                        "y"         => $key['Produksi'],
                         "drilldown" => "wilayah ".$key['Wilayah'],
                     ];
                 } 
@@ -44,6 +44,27 @@ class Model_Data extends CI_Model {
 
         return $toArray;
        
+    }
+
+
+    public function getAllSummary() {
+        $getProduksi = file_get_contents(base_url().'file/data_barang.json');
+        $toArray = json_decode($getProduksi, true);
+
+        foreach($toArray as $key) {
+            $arr[] = [
+                "name"      => $key['Tanggal'],
+                "y"         => $key['Produksi'],
+                "drilldown" => $key['Tanggal'],
+            ];
+        }
+
+        $data = [
+            "title"  => "Trend All Transaction Summary",
+            "result" => $arr
+
+        ];
+        echo json_encode($data);
     }
 
     

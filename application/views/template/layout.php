@@ -12,7 +12,7 @@
 <!-- header -->
 <div class="row">
 
-        <!-- header -->
+        <!-- header (menu) -->
         <?php $this->load->view('template/header'); ?>
 
 
@@ -32,5 +32,5 @@
 
 </div>
 
-<!-- load css -->
+<!-- load js -->
 <?php $this->load->view('template/js'); ?>

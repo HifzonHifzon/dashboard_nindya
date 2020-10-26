@@ -4,14 +4,6 @@ html, body {
     background-color: e7e1f6;
 }
 
-/* body { 
-    background: url("http://localhost/dashboard_nindyakarya/asset/image/17973908.jpg") no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-} */
-
 
 .header {
     background-color: 0f5f3c;
@@ -29,10 +21,10 @@ html, body {
     background-color: 0f5f3c;
     width: 100%;
     color:white;
-    padding:20px;
+    padding-bottom:45px;
     height: 10px;
     position: fixed;
-    bottom: 0;
+    bottom: -10px;
     text-align: center;
     padding-bottom: -30px;
 }
@@ -74,6 +66,7 @@ h4{
 .title_header{ 
     font-size: 30px;
     text-align: center;
+    font-weight: bold;
 }
 
 .user_log{ 
@@ -84,7 +77,6 @@ h4{
 .news{
     margin-left:50px;
 }
-
 
 .grafik_summary{
     height: 500px!important;
@@ -106,12 +98,21 @@ h4{
     margin-top:10px;
 }
 
+.box_total:hover{
+    background-color: 0f5f3c;
+    height: 100px;
+    width: 100%;
+    border-radius:15px;
+    margin-top:10px;
+}
+
 .total_sum {
     color:e75b24;
     font-size: 50px;
     text-align: center;
     padding:20px;
 }
+
 
 .box_total_wrapper{
     background-color:0f5f3c;
@@ -137,5 +138,17 @@ h4{
     border-radius:15px;
     margin-top:20px;
     padding:10px;
+    margin-bottom:20px;
+}
+
+#container {
+    height:330px;
+}
+
+#container2 {
+    height:385px;
+}
+#container3{
+    height:370px;
 }
 

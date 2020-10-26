@@ -1,4 +1,6 @@
 <div class="container-fluid">
+    
+    <!-- row total  -->
     <div class="row">
         <div class="col-md-3">
             
@@ -27,7 +29,7 @@
             <div class="box_total_wrapper">
                 <div class="box_total">
                     <div class="total_sum">
-                        80
+                        600000 
                     </div>
                </div>
                <h4><center>Produksi Tertinggi </center></h4>
@@ -38,40 +40,19 @@
             <div class="box_total_wrapper">
                 <div class="box_total">
                     <div class="total_sum">
-                        80
+                     150000 
                     </div>
                </div>
                <h4><center>Produksi Terendah</center></h4>
             </div>
         </div>
     </div>
+
+    <!-- row grafik dan table -->
     <div class="row">
         <div class="col-md-6">
             <div class="box_summary">
-                <div class="row">
-                    <div class="col-md-10">
-                        <select name="bulan" class="form-control" id="bulan">
-                            <option value="">Pilih Bulan</option>
-                            <option value="1">Januari</option>
-                            <option value="2">Februari</option>
-                            <option value="3">Maret</option>
-                            <option value="4">April</option>
-                            <option value="5">Mei</option>
-                            <option value="6">Juni</option>
-                            <option value="7">Juli</option>
-                            <option value="8">Agustus</option>
-                            <option value="9">September</option>
-                            <option value="10">Oktober</option>
-                            <option value="11">November</option>
-                            <option value="12">Desember</option>
-                        </select>
-                    </div>
-                    <div class="col-md-2">
-                    <button class="btn btn-info btn-sm" onclick="getSummary()">Search</button>
-                    </div>
-                </div>
-
-                <div id="container"></div>
+                <div id="container2"></div>
             </div>
         </div>  
 
@@ -101,12 +82,46 @@
         </div> 
     </div>
     
+    <!-- row all summary -->
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-8">
+            
             <div class="all_box_summary">
-                <div id="container2"></div>  
+                <div class="row">
+                    <div class="col-md-2">
+                        <select name="bulan" class="form-control" id="bulan">
+                            <option value="">Pilih Bulan</option>
+                            <option value="1">Januari</option>
+                            <option value="2">Februari</option>
+                            <option value="3">Maret</option>
+                            <option value="4">April</option>
+                            <option value="5">Mei</option>
+                            <option value="6">Juni</option>
+                            <option value="7">Juli</option>
+                            <option value="8">Agustus</option>
+                            <option value="9">September</option>
+                            <option value="10">Oktober</option>
+                            <option value="11">November</option>
+                            <option value="12">Desember</option>
+                        </select> 
+                    </div>
+                    <div class="col-md-2">
+                        <button class="btn btn-info btn-sm" onclick="getSummary()">Search</button>
+                    </div>
+                </div>
+
+                <div id="container"></div>
+                
             </div>
         </div>
+
+        <div class="col-md-4">
+            <div class="all_box_summary">
+            <div id="container3"></div>
+            </div>
+        </div>
+        
+       
     </div>
     
      
