@@ -29,16 +29,6 @@ html, body {
     padding-bottom: -30px;
 }
 
-.footer_wrapper {
-    background-color: red;
-    width: 100%;
-    color:white;
-    padding-bottom:45px;
-    height: 100px;
-    position: fixed;
-    text-align: center;
-    padding-bottom: -30px;
-}
 
 .add_header {
     background-color: e75b24;
@@ -77,11 +67,13 @@ h4{
     font-size: 30px;
     text-align: center;
     font-weight: bold;
+    margin-top:18px;
 }
 
 .user_log{ 
     height:"30px";
     width:"30px";
+    margin:20px;
 }
 
 .news{
@@ -180,8 +172,13 @@ a:hover{
 }
 
 .title_menu{
-    font-size: 23px;
+    font-size: 17px;
     color:white;
     margin-left:20px;
     padding-left:20px;
+    margin-top:15px;
+}
+.title_summary{
+    font-size: 17px;
+    text-align: center;
 }

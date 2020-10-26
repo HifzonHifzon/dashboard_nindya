@@ -1,6 +1,6 @@
 <div class="header">
     <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-4">
+        <div class="col-xs-8 col-sm-8 col-md-4">
             <a href="#" style="color:white; text-decoration:none"> 
                 <div class="title_menu">
                     <a href="#"> Home </a>
@@ -14,7 +14,7 @@
             <div class="title_header"> E-DASHBOARD BARANG </div>
         </div>
 
-        <div class="hidden-xs hidden-sm col-md-4">
+        <div class="col-xs-4 col-sm-4 col-md-4">
             <div class="pull-right">
                 <a href="#" onclick="logout();"> 
                     <img class="user_log" src="<?php echo base_url().'asset/image/user_.png' ?>" height="30px" width="30px" >

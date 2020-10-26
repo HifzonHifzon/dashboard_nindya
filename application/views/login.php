@@ -1,6 +1,6 @@
 <html>
 <head>
-<title> Dashboard - Nindya Karya </title>
+<title> Nindya Karya </title>
 <link rel="icon" href="<?php echo base_url().'asset/image/logo.png' ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="<?php echo base_url().'asset/bootstrap/css/bootstrap.css' ?>">
@@ -28,7 +28,7 @@
 
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12">
-                        <input type="text" class="form-control input_login" placeholder="Password">
+                        <input type="password" class="form-control input_login" placeholder="Password">
                     </div>
                 </div>
 

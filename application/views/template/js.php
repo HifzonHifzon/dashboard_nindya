@@ -1,7 +1,6 @@
 
 <script src="<?php echo base_url().'asset/jquery-351.js'?>"></script>
 <script src="<?php echo base_url().'asset/bootstrap/js/bootstrap-341.min.js'?>"></script>
-<script src="<?php echo base_url().'asset/datatables/media/js/dataTables.bootstrap.js'?>"> </script>
 <script src="<?php echo base_url().'asset/datatables/media/js/jquery.dataTables.js'?>"> </script>
 <script src="<?php echo base_url().'asset/datatables/media/js/dataTables.buttons.min.js'?>" > </script>
 <script src="<?php echo base_url().'asset/datatables/media/js/buttons.flash.min.js' ?>" > </script>
@@ -61,7 +60,7 @@ function logout() {
     if (willDelete) {
         window.location = "<?php echo base_url().'/login'?>"
     } else {
-        swal("Your imaginary file is safe!");
+        swal("yes, no problem");
     }
     });
 }
@@ -80,6 +79,7 @@ function getSummary() {
         success:function(res) {
             var data  = JSON.parse(res);
             showChartSummary(data);
+            showPieSummary(data);
         }
     })
 }
@@ -96,7 +96,6 @@ function getAllSummary() {
         typeData : 'JSON',
         success:function(res) {
             var data  = JSON.parse(res);
-            
             showChartAllSummary(data);
         }
     })
@@ -109,7 +108,7 @@ function showChartSummary(data) {
             type: 'column'
         },
         title: {
-            text: "Trend Data Summary Produksi"
+            text: 'Trend Data Summary Production Per-Wilayah'
         },
         accessibility: {
             announceNewData: {
@@ -121,7 +120,7 @@ function showChartSummary(data) {
         },
         yAxis: {
             title: {
-                text: 'Total Data Trend Data Summary Produksi'
+                text: 'Trend Data Summary Production Per-Wilayah'
             }
 
         },
@@ -163,7 +162,7 @@ function showChartAllSummary(data) {
             type: 'column'
         },
         title: {
-            text: 'Trend All Summary Produksi'
+            text: 'Trend Data Production Per-date'
         },
     
         accessibility: {
@@ -176,7 +175,7 @@ function showChartAllSummary(data) {
         },
         yAxis: {
             title: {
-                text: 'Trend All Summary Produksi'
+                text: 'Trend Data Production Per-date'
             }
 
         },
@@ -209,69 +208,41 @@ function showChartAllSummary(data) {
 }
 
 
-Highcharts.chart('container3', {
-    chart: {
-        plotBackgroundColor: null,
-        plotBorderWidth: null,
-        plotShadow: false,
-        type: 'pie'
-    },
-    title: {
-        text: 'Browser market shares in January, 2018'
-    },
-    tooltip: {
-        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-    },
-    accessibility: {
-        point: {
-            valueSuffix: ''
-        }
-    },
-    plotOptions: {
-        pie: {
-            allowPointSelect: true,
-            cursor: 'pointer',
-            dataLabels: {
-                enabled: true,
-                format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+function showPieSummary(data) {
+    Highcharts.chart('container3', {
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false,
+            type: 'pie'
+        },
+        title: {
+            text: 'Presentase Data Production'
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        accessibility: {
+            point: {
+                valueSuffix: ''
             }
-        }
-    },
-    series: [{
-        name: 'Brands',
-        colorByPoint: true,
-        data: [{
-            name: 'Chrome',
-            y: 61.41,
-            sliced: true,
-            selected: true
-        }, {
-            name: 'Internet Explorer',
-            y: 11.84
-        }, {
-            name: 'Firefox',
-            y: 10.85
-        }, {
-            name: 'Edge',
-            y: 4.67
-        }, {
-            name: 'Safari',
-            y: 4.18
-        }, {
-            name: 'Sogou Explorer',
-            y: 1.64
-        }, {
-            name: 'Opera',
-            y: 1.6
-        }, {
-            name: 'QQ',
-            y: 1.2
-        }, {
-            name: 'Other',
-            y: 2.61
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: true,
+                    format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+                }
+            }
+        },
+        series: [{
+            name: 'Brands',
+            colorByPoint: true,
+            data : data.result   
         }]
-    }]
-});
-
+    });
+}
 
 </script>

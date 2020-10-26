@@ -66,7 +66,9 @@
 
         <div class="col-md-6">
             <div class="box_summary">
-                <h4><center>  Trend Data Summary Produksi</center> </h4>
+                <div class="title_summary">  
+                    Trend Data Production Per-date
+                </div>
                 <table class="table table-bordered" id="listData">
                     <thead>
                         <tr>
