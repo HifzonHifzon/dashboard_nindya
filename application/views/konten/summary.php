@@ -7,10 +7,12 @@
             <div class="box_total_wrapper">
                 <div class="box_total">
                     <div class="total_sum">
-                        80000
+                        <div class="alltotal"></div>
                     </div>
                </div>
-               <h4><center> Total Bulan Ini </center></h4>
+                <div class="title_total_sum">
+                    Total Bulan Ini
+                </div>
             </div>
         </div>
 
@@ -18,10 +20,12 @@
             <div class="box_total_wrapper">
                <div class="box_total">
                     <div class="total_sum">
-                        80
+                        <div class="totalwilayah"></div>
                     </div>
                </div>
-               <h4><center> Total Data Wilayah</center></h4>
+               <div class="title_total_sum">
+                    Total Data Wilayah
+                </div>
             </div>
         </div>
 
@@ -29,10 +33,12 @@
             <div class="box_total_wrapper">
                 <div class="box_total">
                     <div class="total_sum">
-                        600000 
+                        <div class="tertinggi"></div> 
                     </div>
                </div>
-               <h4><center>Produksi Tertinggi </center></h4>
+               <div class="title_total_sum">
+                   Produksi Tertinggi 
+               </div>
             </div>
         </div>
 
@@ -40,10 +46,12 @@
             <div class="box_total_wrapper">
                 <div class="box_total">
                     <div class="total_sum">
-                     150000 
+                        <div class="terendah"></div>  
                     </div>
                </div>
-               <h4><center>Produksi Terendah</center></h4>
+               <div class="title_total_sum">
+                   Produksi Terendah
+                </div>
             </div>
         </div>
     </div>
@@ -58,6 +66,7 @@
 
         <div class="col-md-6">
             <div class="box_summary">
+                <h4><center>  Trend Data Summary Produksi</center> </h4>
                 <table class="table table-bordered" id="listData">
                     <thead>
                         <tr>

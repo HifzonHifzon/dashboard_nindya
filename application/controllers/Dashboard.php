@@ -28,23 +28,6 @@ class Dashboard extends CI_Controller {
         $this->load->view('template/layout',$view);
     }
 
-    public function getPageHome() {
-        $news  = $this->Model_Data->getNews();
-        $nowMonth = date('m');
-        $getProduksi  = $this->Model_Data->getProduksi($nowMonth,'forTable');
-
-        $view['data'] = [
-            "title"         => "E-Dashboard Barang",
-            "last_data"     => "23-10-2020",
-            "news"          => $news,
-            "produksi"      => $getProduksi,
-            "konten"        => 'konten/home',
-        ];
-
-        $this->load->view('template/layout',$view);
-    }
-
-
     // load data for trend grafik ajax
     public function getProduksi(){
         $type = $this->input->post('type');
@@ -58,10 +41,16 @@ class Dashboard extends CI_Controller {
         echo $dataBarang;
     }
 
+    // load total ajax
+    public function getTotal(){
+        $data = $this->Model_Data->getSumTotal();
+        echo $data;
+    }
+
 
     // redirect auth login
     public function actionAuth() {
-        redirect(base_url().'dashboard/home');
+        redirect(base_url().'dashboard/summary');
     }
 }
 

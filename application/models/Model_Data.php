@@ -9,9 +9,16 @@ class Model_Data extends CI_Model {
         return $toArray;
     }
 
-    public function getProduksi($search_bulan , $type){
+
+    public function getDataProduksi() {
         $getProduksi = file_get_contents(base_url().'file/data_barang.json');
         $toArray = json_decode($getProduksi, true);
+        return $toArray;
+    }
+
+
+    public function getProduksi($search_bulan , $type){
+        $toArray = $this->getDataProduksi();
 
         if ($type == 'trendSummary') {
             foreach($toArray as $key) {
@@ -48,8 +55,7 @@ class Model_Data extends CI_Model {
 
 
     public function getAllSummary() {
-        $getProduksi = file_get_contents(base_url().'file/data_barang.json');
-        $toArray = json_decode($getProduksi, true);
+        $toArray = $this->getDataProduksi();
 
         foreach($toArray as $key) {
             $arr[] = [
@@ -64,6 +70,27 @@ class Model_Data extends CI_Model {
             "result" => $arr
 
         ];
+        echo json_encode($data);
+    }
+
+    public function getSumTotal() {
+        $getProduksi = file_get_contents(base_url().'file/data_barang.json');
+        $toArray = json_decode($getProduksi, true);
+        
+        $total = 0;
+        foreach($toArray as $key) {
+            $total = $total + (int)$key['Produksi'];
+            $wilayah[] = $key['Wilayah'];
+            $value_produksi [] = $key['Produksi'];
+        }
+
+        $data = [
+            "total_produksi"    => $total,
+            "total_wilayah"     => count(array_unique($wilayah)),
+            "tertinggi_produksi"=> max($value_produksi), 
+            "terendah_produksi" => min($value_produksi), 
+        ];
+
         echo json_encode($data);
     }
 

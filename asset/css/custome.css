@@ -29,6 +29,16 @@ html, body {
     padding-bottom: -30px;
 }
 
+.footer_wrapper {
+    background-color: red;
+    width: 100%;
+    color:white;
+    padding-bottom:45px;
+    height: 100px;
+    position: fixed;
+    text-align: center;
+    padding-bottom: -30px;
+}
 
 .add_header {
     background-color: e75b24;
@@ -146,9 +156,32 @@ h4{
 }
 
 #container2 {
-    height:385px;
+    height:455px;
 }
 #container3{
     height:370px;
+} 
+
+.title_total_sum {
+    font-size:20px;
+    text-align: center;
+    margin:10px;
+    font-weight: bold;
 }
 
+a {
+    color:white;
+    text-decoration: none;
+}
+
+a:hover{
+    color:e75b24;
+    text-decoration: none;
+}
+
+.title_menu{
+    font-size: 23px;
+    color:white;
+    margin-left:20px;
+    padding-left:20px;
+}

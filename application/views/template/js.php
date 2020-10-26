@@ -1,10 +1,18 @@
 
-<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="<?php echo base_url().'asset/jquery-351.js'?>"></script>
+<script src="<?php echo base_url().'asset/bootstrap/js/bootstrap-341.min.js'?>"></script>
 <script src="<?php echo base_url().'asset/datatables/media/js/dataTables.bootstrap.js'?>"> </script>
 <script src="<?php echo base_url().'asset/datatables/media/js/jquery.dataTables.js'?>"> </script>
-<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="<?php echo base_url().'asset/datatables/media/js/dataTables.buttons.min.js'?>" > </script>
+<script src="<?php echo base_url().'asset/datatables/media/js/buttons.flash.min.js' ?>" > </script>
+<script src="<?php echo base_url().'asset/datatables/media/js/jszip.min.js'?>" > </script>
+<script src="<?php echo base_url().'asset/datatables/media/js/pdfmake.min.js'?>"  > </script>
+<script src="<?php echo base_url().'asset/datatables/media/js/vfs_fonts.js'?>" > </script>
+<script src="<?php echo base_url().'asset/datatables/media/js/buttons.html5.min.js'?>" > </script>
+<script src="<?php echo base_url().'asset/datatables/media/js/buttons.print.min.js'?>" > </script>
+
+<script src="<?php echo base_url().'asset/highchart.js' ?>"></script>
+<script src="<?php echo base_url().'asset/sweetalert.min.js'?>"></script>
 </body>
 </html>
 
@@ -12,32 +20,51 @@
 $(document).ready( function () {
     getSummary();
     getAllSummary();
+    getTotalProduksi();
 
     // load datatables
     $('#listData').DataTable( {
-        "pageLength": 8
+        "pageLength": 8,
+        dom: 'Bfrtip',
+        buttons: [
+            'copy', 'csv', 'excel', 'print'
+        ]
     });
     
-    // get Logout
-    function logout() {
-        swal({
-            title: "Are you sure?",
-            text: "Once deleted, you will not be able to recover this imaginary file!",
-            icon: "warning",
-            buttons: true,
-            dangerMode: true,
-        })
-            .then((willDelete) => {
-        if (willDelete) {
-            swal("Poof! Your imaginary file has been deleted!", {
-            icon: "success",
-            });
-        } else {
-            swal("Your imaginary file is safe!");
-        }
-      });
+    function getTotalProduksi() {
+        $.ajax({
+            url : "<?php echo base_url(). 'dashboard/getTotal';?>",
+            type : "POST",
+            typeData : 'JSON',
+            success:function(res) {
+                var data  = JSON.parse(res);
+                $('.alltotal').text(data.total_produksi);
+                $('.totalwilayah').text(data.total_wilayah);
+                $('.tertinggi').text(data.tertinggi_produksi);
+                $('.terendah').text(data.terendah_produksi);
+            }
+        });
     }
+    // get Logout
 });
+
+ 
+function logout() {
+    swal({
+        title: "",
+        text: "Are you want logout ? ",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+    })
+        .then((willDelete) => {
+    if (willDelete) {
+        window.location = "<?php echo base_url().'/login'?>"
+    } else {
+        swal("Your imaginary file is safe!");
+    }
+    });
+}
 
 // get data Summary table n grafik ByWilayah
 function getSummary() {
