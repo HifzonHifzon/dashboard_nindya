@@ -27,6 +27,8 @@ html, body {
     bottom: -10px;
     text-align: center;
     padding-bottom: -30px;
+    padding-top:10px;
+    font-weight: bold;
 }
 
 

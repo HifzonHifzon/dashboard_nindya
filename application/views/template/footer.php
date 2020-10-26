@@ -1,5 +1,5 @@
 <div class="footer_wrapper">
     <div class="footer">
-        Nindya Karya
+        BUMN - Nindya Karya 2020
     </div>
 </div>
